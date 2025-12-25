@@ -25,7 +25,7 @@ class FonParserService:
         # Portföy dağılımı
         for item in root.findall('.//PORTFOY_DAGILIM_LIST/PORTFOY_DAGILIM'):
             dagilim = FonPortfoyDagilim(
-                piy_deger=item.findtext('PIY_DEGER', "").strip(),
+                dagilim_adi=item.findtext('PIY_DEGER', "").strip(),
                 piy_oran=float(item.find('PIY_ORAN').text.strip().replace(',', '.'))
             )
             entity.portfoy_dagilimlari.append(dagilim)
